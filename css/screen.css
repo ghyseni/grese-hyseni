@@ -350,6 +350,16 @@ article li li ol {
   background-color: #010101;
 }
 
+#footer .copyright{
+  float:right;
+  width:auto;
+}
+
+#footer .contact-info{
+  float:left;
+  width: auto;
+}
+
 /* Modular Styles */
 
 /*
@@ -756,6 +766,7 @@ article li li ol {
   }
   /*Portfolio*/
   .portfolio .portfolio-entry {
+    position:relative;
     width: 50%;
     padding: 1.125em 5%;
   }
@@ -767,6 +778,16 @@ article li li ol {
     -ms-filter: blur(5px);
     filter: blur(5px);
   }
+  /* .portfolio .portfolio-entry:after{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    left:0;
+    top:0;
+    background: url('../images/blurry-mask.png') no-repeat;
+    background-size:cover;
+  } */
   .portfolio .portfolio-entry:nth-child(2n+1) {
     clear: left;
     background-color: #fff;
@@ -890,6 +911,11 @@ article li li ol {
 @media screen and (min-width: 1366px) {
   /*General*/
   #header {
+    padding-left: 9.375rem;
+    padding-right: 9.375rem;
+    /*150/16 =9.375*/
+  }
+  #footer{
     padding-left: 9.375rem;
     padding-right: 9.375rem;
     /*150/16 =9.375*/
