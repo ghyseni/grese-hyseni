@@ -112,6 +112,10 @@ h3 {
 h4, p, li {
   line-height: 1.125em;
   /*18 / 16 = 1.125;*/
+  font-size: 1.1em;
+  /* not tested in text grid*/
+  line-height: 1.5em;
+    /* not tested in text grid*/
 }
 
 h4 {
@@ -184,7 +188,9 @@ article li li ol {
   display: block;
   position: relative;
   background-color: #fff;
-  box-shadow: 0 0.3125em 0.3125em #f2f2f2;
+  /* box-shadow: 0 0.3125em 0.3125em #f2f2f2; */
+  box-shadow: 0 0.3125em 0.3125em rgba(0, 0, 0, 0.2);
+  padding: 1.125em 5%;
   padding: 1.125em 5%;
 }
 
@@ -213,6 +219,10 @@ article li li ol {
 
 #nav li {
   display: block;
+}
+
+#nav li.current {
+  color: #b31178;
 }
 
 #nav a {
@@ -350,13 +360,13 @@ article li li ol {
   background-color: #010101;
 }
 
-#footer .copyright{
-  float:right;
-  width:auto;
+#footer .copyright {
+  float: right;
+  width: auto;
 }
 
-#footer .contact-info{
-  float:left;
+#footer .contact-info {
+  float: left;
   width: auto;
 }
 
@@ -416,18 +426,44 @@ article li li ol {
 
 /* About */
 
-.about .bg-image {
+.about .personal-statement {
+  /* font-size: 1.3em; */
+  /* not tested in text grid*/
+}
+
+.about .personal-statement .bg-image {
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  background: url('../images/IMG_4332.JPG') center no-repeat;
+  background-size: cover;
+}
+
+.keyboard-bg-image {
   position: absolute;
   z-index: -1;
   right: 0;
   top: 0;
   height: 100%;
-  width: 100%;
+  width: 50%;
   background: url('../images/backlit-keyboard.JPG');
-  background-size: cover;
+  background-size: 250%;
 }
 
-.about .bg-image:after {
+.bg-mask {
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* .about .bg-image:after {
   content: "";
   position: absolute;
   right: 0;
@@ -435,7 +471,7 @@ article li li ol {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
-}
+} */
 
 .about .skills {
   position: relative;
@@ -444,17 +480,48 @@ article li li ol {
   text-transform: uppercase;
 }
 
+.about .skills {
+  font-size: 1.4em;
+  /* not tested in text grid*/
+}
+
 .about .skills li {
   font-weight: bold;
   text-transform: uppercase;
   line-height: 2.25em;
+  width: 50%;
+  float: left;
   /* 36 / 16 = 2.25 */
 }
 
 /* Resume */
 
-.resume .timeline {
-  background-color: #f2f2f2;
+.resume .left {
+  color: #fff;
+}
+
+.resume .left, .resume .right {
+  width: 50%;
+}
+
+.resume .left .keyboard-bg-image {
+  width: 50%;
+}
+
+.resume-content {
+  /* background-color: #f2f2f2; */
+}
+
+.resume .right {
+  background-color: #fff;
+}
+
+.resume .education {
+  float: right;
+}
+
+.resume .interests {
+  float: left;
 }
 
 .resume h3 {
@@ -492,10 +559,12 @@ article li li ol {
 
 .portfolio .portfolio-entry {
   float: left;
+  background: none !important;
 }
 
-.portfolio .portfolio-entry:nth-child(2n+1) {
-  background-color: #f2f2f2;
+.portfolio .portfolio-entry:nth-child(2n) {
+  /* background-color: #f2f2f2; */
+  color: #fff;
 }
 
 .portfolio .categories li, .portfolio .team li {
@@ -757,26 +826,31 @@ article li li ol {
     float: left;
     width: 100%;
   }
+  .skills {
+    width: 50%;
+  }
   .skills .skills-group {
     float: left;
-    width: 50%;
+    width: 100%;
   }
   .skills .skills-group ul {
     padding-top: 0;
   }
   /*Portfolio*/
   .portfolio .portfolio-entry {
-    position:relative;
+    position: relative;
     width: 50%;
     padding: 1.125em 5%;
-  }
+    /* padding: 1.6875em 5%;
+    /* not tested in text grid - 1.125 + 1.125/2 = 1.6875 */ */
 
-  .portfolio .portfolio-entry img{
-    -webkit-filter: blur(5px);
-    -moz-filter: blur(5px);
-    -o-filter: blur(5px);
-    -ms-filter: blur(5px);
-    filter: blur(5px);
+  }
+  .portfolio .portfolio-entry img {
+    -webkit-filter: blur(2px);
+    -moz-filter: blur(2px);
+    -o-filter: blur(2px);
+    -ms-filter: blur(2px);
+    filter: blur(2px);
   }
   /* .portfolio .portfolio-entry:after{
     content:"";
@@ -915,7 +989,7 @@ article li li ol {
     padding-right: 9.375rem;
     /*150/16 =9.375*/
   }
-  #footer{
+  #footer {
     padding-left: 9.375rem;
     padding-right: 9.375rem;
     /*150/16 =9.375*/
