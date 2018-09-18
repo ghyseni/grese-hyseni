@@ -225,7 +225,7 @@ article li li ol {
 
 
 #nav a:hover, #nav li.current a {
-    color: #000;
+    color: #0008;
     transition: color 0.2s;
 }
 
@@ -610,7 +610,7 @@ article li li ol {
 }
 
 .contact-form input[type="submit"]:hover {
-    background-color: #000;
+    background-color: #0008;
     color: #fff;
     transition: 0.3s;
     cursor: pointer;
